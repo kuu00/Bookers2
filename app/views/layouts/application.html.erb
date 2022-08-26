@@ -22,10 +22,25 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+          <% if user_signed_in? %>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li>
                 <a class="nav-link text-light" href= "#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/home/about">Users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/users/sign_up">Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/users/sign_in">Log out</a>
+              </li>
+              <% else %>
+              <li>
+                <a class="nav-link text-light" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light" href="/home/about">About</a>
@@ -36,9 +51,13 @@
               <li class="nav-item">
                 <a class="nav-link text-light" href="/users/sign_in">Log in</a>
               </li>
-            </ul>
+              <% end %>
+              </ul>
+            </div>
           </div>
-        </nav>
+        </div>
+      </nav>
+    </header>
 
       <main>
         <p id="notice"></p>
@@ -47,24 +66,9 @@
               <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0"></div>
             </div>
           </div>
-    <%= yield %>
-
-       <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :get %>
-      </li>
-      <% else %>
-      <li>
-        <%= link_to "Sign up", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "Log in", new_user_session_path %>
-      </li>
-      <% end %>
-      </div>
       </main>
-    </header>
-    
+      <%= yield %>
+
     <footer>
       <div class="container mt-5">
         <div class="row">
