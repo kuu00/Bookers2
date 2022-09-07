@@ -19,4 +19,5 @@ class BooksController < ApplicationController
   private
   def book_image_params
     params.require(:book_image).permit(:title, :body)
+  end
 end
