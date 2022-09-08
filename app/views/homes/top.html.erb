@@ -1,1 +1,26 @@
-<h1>TOPページ</h1>
+<main>
+      <p id="notice"></p>
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+            <h1>welcome to
+              <i class="fas fa-book"></i><strong>Bookers</strong>
+              !!</h1>
+              
+            <p>In
+            <i class="fas fa-book"></i><strong>Bookers</strong>,
+            </p>
+            <p>you can share and exchange your opinions , inpressions , and emotions</p>
+            <p>about various books!</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Log in", new_user_session_paht %>
+        </li>
+      <% end %>
+    </main>
