@@ -1,7 +1,32 @@
-<h2>User info</h2>
-<% @book.each do |book| %>
-<%= image_tag no_image, size: "200x200" %>
-<% end %>
+<p id="notice"><%= notice %></p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <%= image_tag 'no_image', size: "100x100" %>
+    
+    <table class="table">
+      <tbody>
+        <tr></tr>
+        <tr>
+          <th>name</th>
+          <th></th>
+        </tr>
+        
+        <tr>
+          <th>introduction</th>
+          <th></th>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="row">
+      
+    </div>
+    
+    </div>  
+  </div>
+</div>
 
 <h2>New book</h2>
 <%= form_with model: Book.new do |f| %>
