@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+
+<div>
+  <%= flash[:notice] %>
+</div>
 
 <%= render 'books/list', book: @books, user: @user %>
 
