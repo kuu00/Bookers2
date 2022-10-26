@@ -3,6 +3,7 @@
   <%= flash[:notice] %>
 </div>
 
+<main>
 <%= render 'books/list', book: @books, user: @user %>
 
 <div class="col-md-8 offset-md-1">
@@ -25,3 +26,4 @@
       </tbody>
     </table>
   </div>
+  </main>
