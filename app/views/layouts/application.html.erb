@@ -7,8 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://kit.fontawesome.com/209e853428.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -29,7 +27,7 @@
             <% if user_signed_in? %>
             <li>
               <%= link_to user_path(@user), class: 'nav-link text-light' do %>
-              <i class="fas fa-house-chimney"></i> Home
+              <i class="fas fa-home"></i> Home
               <% end %>
             </li>
             <li>
@@ -44,7 +42,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :get, class: 'nav-link text-light' do %>
-              <i class="fas fa-right-from-bracket"></i> Log out
+              <i class="fas fa-sign-out-alt"></i> Log out
               <% end %>
             </li>
             <% else %>
@@ -65,7 +63,7 @@
             </li>
             <li>
               <%= link_to new_user_session_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-right-to-bracket"></i> Log in
+              <i class="fas fa-sign-in-alt"></i> Log in
               <% end %>
             </li>
             <% end %>
