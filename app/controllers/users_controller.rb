@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    redirect_to(user_path) unless @user == current_user
+    redirect_to (current_user) unless @user == current_user
   end
 
   def update
@@ -40,10 +40,9 @@ class UsersController < ApplicationController
 
   def index
     @book = Book.new
-    @user = User.all
+    @users = User.all
     @books = Book.all
     @user = current_user
-    @users = @user.books
   end
 
   private
